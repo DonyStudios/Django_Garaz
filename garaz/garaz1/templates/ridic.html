@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymember.vyrobce }} {{ mymember.jmeno }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ ridici.firstname }} {{ ridici.lastname }}</h1>
+  <p>Datum narozeni: {{ridici.datum_narozeni}}</p>
+  <p>Telefon: +420 {{ridici.telefon}}</p>
+  <p>Pojišťovna: {{ridici.pojistovna}}</p>
+  <p>Vozidla: </p>
+  <p>{% for vozidlo in ridici.vozidlo.all %}
+    <a href="{% url 'details' vozidlo.id %}">{{ vozidlo.vyrobce }} {{ vozidlo.jmeno }}</a>
+          {% if not forloop.last %}<br>{% endif %}
+         {% endfor %}
+  </p>
+
+  <p>Zpátky na <a href="/list_ridici">ridičě</a></p>
+
+{% endblock %}

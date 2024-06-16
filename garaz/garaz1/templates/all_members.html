@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href="/">Domov</a></p>
+
+  <h1>Vozidla</h1>
+
+  <ul>
+    {% for x in mymembers %}
+      <li><a href="details/{{ x.id }}">{{ x.vyrobce }} {{ x.jmeno }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

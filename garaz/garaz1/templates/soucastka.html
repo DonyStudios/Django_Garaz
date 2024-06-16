@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymember.vyrobce }} {{ mymember.jmeno }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ ridici.firstname }} {{ ridici.lastname }}</h1>
+  <p>Výrobce: {{mymember.vyrobce}}</p>
+  <p>Model: {{mymember.jmeno}}</p>
+  <p>Typ vozidla: {{mymember.typ_vozidla}}</p>
+  <p>Cena vozidla: {{mymember.cena}},-</p>
+  <p>Hmotnost vozidla: {{mymember.hmotnost}}kg</p>
+  <p></p>
+
+  <p>Zpátky na <a href="/list_ridici">ridičě</a></p>
+
+{% endblock %}
