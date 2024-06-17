@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ pnei.znacka }} {{ pnei.model }}
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="bg-dark text-white m-0">{{ pnei.znacka }} {{ pnei.model }}</h1>
+  <p class="bg-dark text-white m-0">Výrobce: {{pnei.znacka}}</p>
+  <p class="bg-dark text-white m-0">Model: {{pnei.model}}</p>
+  <p class="bg-dark text-white m-0">Typ pneumatiky: {% if pnei.letni %}
+    Letní
+    {% else %}
+    Zimní
+    {% endif %}
+  </p>
+
+
+{% endblock %}

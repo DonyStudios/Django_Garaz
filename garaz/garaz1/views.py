@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
-from .models import Ridic, Vozidlo
+from .models import Ridic, Vozidlo, Motor, Brzdy, Pneu, Odpruzeni
 from django.shortcuts import render
 
 def garaz1(request):
@@ -11,13 +11,10 @@ def garaz1(request):
   }
   return HttpResponse(template.render(context, request))
 
-def details(request, id):
-  mymember = Vozidlo.objects.get(id=id)
-  template = loader.get_template('details.html')
-  context = {
-    'mymember': mymember,
-  }
-  return HttpResponse(template.render(context, request))
+def vozidlo(request, id):
+  vozidlo = Vozidlo.objects.get(id=id)
+  return render(request, 'vozidlo.html', {'vozidlo': vozidlo})
+
 
 def main(request):
   template = loader.get_template('main.html')
@@ -30,3 +27,26 @@ def list_ridici(request):
 def ridic(request, id):
   ridici = Ridic.objects.get(id=id)
   return render(request, 'ridic.html', {'ridici': ridici})
+
+def list_soucastky(request):
+    motory = Motor.objects.all()
+    brzdy = Brzdy.objects.all()
+    pneu = Pneu.objects.all()
+    odpruzeni = Odpruzeni.objects.all()
+    return render(request, 'list_soucastky.html', {'motory': motory,'brzdy': brzdy,'pneu': pneu,'odpruzeni': odpruzeni})
+
+def motor(request, id):
+  motory = Motor.objects.get(id=id)
+  return render(request, 'motor.html', {'motory': motory})
+
+def brzdy(request, id):
+  brzda = Brzdy.objects.get(id=id)
+  return render(request, 'brzda.html', {'brzda': brzda})
+
+def pneu(request, id):
+  pnei = Pneu.objects.get(id=id)
+  return render(request, 'pneu.html', {'pnei': pnei})
+
+def odpruzeni(request, id):
+  pruzina = Odpruzeni.objects.get(id=id)
+  return render(request, 'odpruzeni.html', {'pruzina': pruzina})

@@ -7,11 +7,10 @@
 
 {% block content %}
 
-  <p><a href="/">Domov</a></p>
 
-  <h1>Ridici</h1>
+  <h1 class="bg-dark text-white m-0">Řidiči</h1>
 
-  <ul>
+  <ul class="bg-dark text-white m-0">
     {% for ridic in ridici %}
       <li><a href="{% url 'ridic' ridic.id %}">{{ ridic.firstname }} {{ ridic.lastname }}</a></li>
     {% endfor %}

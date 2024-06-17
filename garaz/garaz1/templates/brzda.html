@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ brzda.znacka }} {{ brzda.model }}
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="bg-dark text-white m-0">{{ brzda.znacka }} {{ brzda.model }}</h1>
+  <p class="bg-dark text-white m-0">Výrobce: {{brzda.znacka}}</p>
+  <p class="bg-dark text-white m-0">Model: {{brzda.model}}</p>
+  <p class="bg-dark text-white m-0">Efektivita brzd: {{brzda.efektivita}} %</p>
+
+
+{% endblock %}

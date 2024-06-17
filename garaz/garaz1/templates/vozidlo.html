@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ vozidlo.vyrobce }} {{ vozidlo.jmeno }}
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="bg-dark text-white m-0">{{ vozidlo.vyrobce }} {{ vozidlo.jmeno }}</h1>
+  <p class="bg-dark text-white m-0">Výrobce: {{vozidlo.vyrobce}}</p>
+  <p class="bg-dark text-white m-0">Model: {{vozidlo.jmeno}}</p>
+  <p class="bg-dark text-white m-0">Typ vozidla: {{vozidlo.typ_vozidla}}</p>
+  <p class="bg-dark text-white m-0">Cena vozidla: {{vozidlo.cena}},-</p>
+  <p class="bg-dark text-white m-0">Hmotnost vozidla: {{vozidlo.hmotnost}}kg</p>
+{% for motor in vozidlo.motorizace.all %}
+  <p class="bg-dark text-white m-0">Motor vozidla: <a href="{% url 'motor' motor.id %}">{{motor.znacka}} {{motor.model}}</a></p>
+{% endfor %}
+{% for brzda in vozidlo.brzdy.all %}
+  <p class="bg-dark text-white m-0">Motor vozidla: <a href="{% url 'brzdy' brzda.id %}">{{brzda.znacka}} {{brzda.model}}</a></p>
+{% endfor %}
+{% for pnei in vozidlo.pneu.all %}
+  <p class="bg-dark text-white m-0">Obutí vozidla: <a href="{% url 'pneu' pnei.id %}">{{pnei.znacka}} {{pnei.model}}</a></p>
+{% endfor %}
+{% for pruzina in vozidlo.odpruzeni.all %}
+  <p class="bg-dark text-white m-0">Odpružení vozidla: <a href="{% url 'odpruzeni' pruzina.id %}">{{pruzina.znacka}} {{pruzina.model}}</a></p>
+{% endfor %}
+
+  <p></p>
+
+  
+{% endblock %}

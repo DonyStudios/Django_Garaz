@@ -1,19 +1,74 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
-{% block title %}
-
-{% endblock %}
-
+{% block title %}List součástek{% endblock %}
 
 {% block content %}
+<h2 class="display-4 text-center text-white bg-dark m-1"><strong>List součástek</strong></h2>
 
-  <p><a href="/">Domov</a></p>
-
-  <h1>Ridici</h1>
-
-  <ul>
-    {% for ridic in ridici %}
-      <li><a href="{% url 'ridic' ridic.id %}">{{ ridic.firstname }} {{ ridic.lastname }}</a></li>
-    {% endfor %}
-  </ul>
+<div class="row bg-dark" style="padding-left: 7px; padding-right: 0">
+    <div class="col p-0">
+        <table class="table table-dark table-striped table-hover table-responsive-lg">
+            <thead>
+            <tr>
+                <th>Motory</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for motor in motory %}
+            <tr>
+                <td class="align-middle"><a href="{% url 'motor' motor.id %}">{{ motor.znacka }} {{ motor.model }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col p-0">
+        <table class="table table-dark table-striped table-hover table-responsive-lg">
+            <thead>
+            <tr>
+                <th>Brzdy</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for brzda in brzdy %}
+            <tr>
+                <td class="align-middle"><a href="{% url 'brzdy' brzda.id %}">{{ brzda.znacka }} {{ brzda.model }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col p-0">
+        <table class="table table-dark table-striped table-hover table-responsive-lg">
+            <thead>
+            <tr>
+                <th>Pneumatiky</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for pnei in pneu%}
+            <tr>
+                <td class="align-middle"><a href="{% url 'pneu' pnei.id %}">{{ pnei.znacka }} {{ pnei.model }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="col p-0">
+        <table class="table table-dark table-striped table-hover table-responsive-lg">
+            <thead>
+            <tr>
+                <th>Odpružení</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ppruzina in odpruzeni%}
+            <tr>
+                <td class="align-middle"><a href="{% url 'odpruzeni' ppruzina.id %}">{{ ppruzina.znacka }} {{ ppruzina.model }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock %}

@@ -6,17 +6,16 @@
 
 
 {% block content %}
-  <h1>{{ ridici.firstname }} {{ ridici.lastname }}</h1>
-  <p>Datum narozeni: {{ridici.datum_narozeni}}</p>
-  <p>Telefon: +420 {{ridici.telefon}}</p>
-  <p>Pojišťovna: {{ridici.pojistovna}}</p>
-  <p>Vozidla: </p>
-  <p>{% for vozidlo in ridici.vozidlo.all %}
-    <a href="{% url 'details' vozidlo.id %}">{{ vozidlo.vyrobce }} {{ vozidlo.jmeno }}</a>
+  <h1 class="bg-dark text-white m-0">{{ ridici.firstname }} {{ ridici.lastname }}</h1>
+  <p class="bg-dark text-white m-0">Datum narozeni: {{ridici.datum_narozeni}}</p>
+  <p class="bg-dark text-white m-0">Telefon: +420 {{ridici.telefon}}</p>
+  <p class="bg-dark text-white m-0">Pojišťovna: {{ridici.pojistovna}}</p>
+  <p class="bg-dark text-white m-0">Vozidla: </p>
+  <p class="bg-dark text-white m-0">{% for vozidlo in ridici.vozidlo.all %}
+    <a href="{% url 'vozidlo' vozidlo.id %}">{{ vozidlo.vyrobce }} {{ vozidlo.jmeno }}</a>
           {% if not forloop.last %}<br>{% endif %}
          {% endfor %}
   </p>
 
-  <p>Zpátky na <a href="/list_ridici">ridičě</a></p>
 
 {% endblock %}

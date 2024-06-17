@@ -7,13 +7,12 @@
 
 {% block content %}
 
-  <p><a href="/">Domov</a></p>
 
-  <h1>Vozidla</h1>
+  <h1 class="bg-dark text-white m-0">Vozidla </h1>
 
-  <ul>
+  <ul class="bg-dark text-white m-0">
     {% for x in mymembers %}
-      <li><a href="details/{{ x.id }}">{{ x.vyrobce }} {{ x.jmeno }}</a></li>
+      <li><a href="{% url 'vozidlo' x.id %}">{{ x.vyrobce }} {{ x.jmeno }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymember.vyrobce }} {{ mymember.jmeno }}
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="bg-dark text-white m-0">{{ motory.znacka }} {{ motory.model }}</h1>
+  <p class="bg-dark text-white m-0">Výrobce: {{motory.znacka}}</p>
+  <p class="bg-dark text-white m-0">Model: {{motory.model}}</p>
+  <p class="bg-dark text-white m-0">Počet válců: {{motory.valce}}</p>
+  <p class="bg-dark text-white m-0">Výkon: {{motory.vykon}} koní</p>
+  <p class="bg-dark text-white m-0">Obsah: {{motory.obsah}} cc</p>
+  <p class="bg-dark text-white m-0">Turbo: {{motory.turbo}}</p>
+  <p class="bg-dark text-white m-0">Palivo: {{motory.palivo}}</p>
+
+
+{% endblock %}

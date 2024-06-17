@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ brzda.znacka }} {{ brzda.model }}
+{% endblock %}
+
+
+{% block content %}
+  <h1 class="bg-dark text-white m-0">{{ pruzina.znacka }} {{ pruzina.model }}</h1>
+  <p class="bg-dark text-white m-0">Výrobce: {{pruzina.znacka}}</p>
+  <p class="bg-dark text-white m-0">Model: {{pruzina.model}}</p>
+
+
+{% endblock %}
